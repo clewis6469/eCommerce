@@ -1,0 +1,149 @@
+<!doctype>
+<html>
+    <head>
+        <title>
+            Lavishh Chris' Electronics
+        </title>
+        <style>
+            img{
+                width:300px;
+            }
+            input{
+                width:20px;
+            }
+            body {
+    background-color: turquoise;
+            }
+            button {
+                color:indigo
+            }
+            div {
+                color: fuchsia;
+            }
+        </style>
+        <script>
+             function bill() {
+                 var retailprice1 = 999.99
+                 var retailprice2 = 799.99
+                 var retailprice3 = 699.99
+                 var wholesaleprice1 = 749.99
+                 var wholesaleprice2 = 599.99
+                 var wholesaleprice3 = 524.99
+                 var quantity1 = document.getElementById ("Quantity1");
+                 var quantity2 = document.getElementById ("Quantity2");
+                 var quantity3 = document.getElementById ("Quantity3");
+                 var customersubtotal = parseInt(retailprice1 * quantity1.value + retailprice2 * quantity2.value + retailprice3 * quantity3.value);
+                 var companysubtotal = parseInt(wholesaleprice1 * quantity1.value + wholesaleprice2 * quantity2.value + wholesaleprice3 * quantity3.value);
+                 var output = document.getElementById ("output");
+
+                 var shipping = 0;
+
+                 var tax = parseFloat(customersubtotal) * 0.0875;
+
+                 var total = parseFloat(customersubtotal) + tax + shipping;
+
+                 var build = "";
+                 build += "Subtotal: $" + subtotal.value + "<br>"
+                 build += "Shipping: $" + shipping.value + "<br>"
+                 build += "Tax: $" + tax.toFixed(2) + "<br>"
+                 build += "--------------------<br>";
+                 build += "Total: $" + total.toFixed(2);
+
+                 output.innerHTML = build;
+             }
+        </script>
+    </head>
+    <body>
+        <div>
+            <h1>
+                iPhone X
+            </h1>
+            <img src="Images/iphonexdesign.jpg"><br>
+            <span>
+                $999.99
+            </span>
+            <p>
+                It's ALL SCREEN !<br>
+                <br>
+                Innovative Technology.<br>
+                <br>
+                True Depth Camera<br>
+                <br>
+                ALL NEW DESIGN<br>
+                <br>
+                Water & Dust Resistant <br>
+                <br>
+                Introducing Face ID...secure your phone with just your face<br>
+                <br>
+                Power Effeciency...have your phone stay up as long as you do<br>
+            </p>
+            Quantity: <input type="text" id="Quantity1">
+            <button onclick>
+                Add To Cart
+            </button>
+        </div>
+        <div>
+            <h2>
+                iPhone 8 Plus 
+            </h2>
+            <img src="Images/iphone8plus.jpeg"><br>
+            <span>
+                $799.99
+            </span>
+            <p>
+                    An iPhone formed from GLASS !<br>
+                    <br>
+                    Water & Dust Resistant<br>
+                    <br>
+                    Able to charge WIRELESSLY<br>
+                    <br>
+                    5.5 -INCH Retina HD Display<br>
+                    <br>
+                    Portrait Mode on another LEVEL and much better !<br>
+					<br>
+                    A11 Bionic...The most powerful and smartest chip ever in a smartphone..<br>
+                    <br>
+            </p>
+            Quantity: <input type="text" id="Quantity2">
+            <button onclick>
+                Add To Cart
+            </button>                       
+        </div>
+        <div>
+            <h3>
+                iPhone 8
+            </h3>
+            <img src="Images/iphone8.jpg"><br>
+            <span>
+                $699.99
+            </span>
+            <p>
+                    Apple has brought back "The Glass Back!"<br>
+                    <br>
+                    An ALL NEW FORM OF TECHNOLOGY IN YOUR HANDS<br>
+                    <br>
+                    Water & Dust Resistant<br>
+                    <br>
+                    Charges Wirelessly ?....OF COURSE !<br>
+                    <br>
+                    4.7-inch Retina HD Display<br>
+                    <br>
+                    Introducing the world's most popular camera !<br>
+                    <br>
+                    A11 Bionic....The most powerful and smartest chip ever in a smartphone.<br>
+            </p>
+            Quantity: <input type="text" id="Quantity3">
+            <button onclick>
+                Add To Cart
+            </button>
+        </div>
+        <br>
+        Subtotal: <input id="customersubtotal" type="text">
+        <button onclick="bill()">
+            Continue To Check Out 
+        </button>
+        <div id="output">
+        </div> 
+
+    </body>
+</html>
