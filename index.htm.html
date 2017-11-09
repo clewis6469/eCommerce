@@ -34,6 +34,9 @@
                  var quantity3 = document.getElementById ("Quantity3");
                  var customersubtotal = parseInt(retailprice1 * quantity1.value + retailprice2 * quantity2.value + retailprice3 * quantity3.value);
                  var companysubtotal = parseInt(wholesaleprice1 * quantity1.value + wholesaleprice2 * quantity2.value + wholesaleprice3 * quantity3.value);
+                 console.log("The Company Subtotal Is $" + companysubtotal);
+                 var totalItems = parseInt (quantity1.value) + parseInt (quantity2.value) + parseInt (quantity3.value);
+                 console.log("The Total Items Sold Is: " + quantity1.value + quantity2.value + quantity3.value);
                  var output = document.getElementById ("output");
 
                  var shipping = 0;
@@ -43,14 +46,21 @@
                  var total = parseFloat(customersubtotal) + tax + shipping;
 
                  var build = "";
-                 build += "Subtotal: $" + subtotal.value + "<br>"
-                 build += "Shipping: $" + shipping.value + "<br>"
+                 build += "Subtotal: $" + customersubtotal + "<br>"
+                 build += "Shipping: $" + shipping + "<br>"
                  build += "Tax: $" + tax.toFixed(2) + "<br>"
                  build += "--------------------<br>";
                  build += "Total: $" + total.toFixed(2);
 
                  output.innerHTML = build;
              }
+        </script>
+        <script>
+            function Quantity() {
+                var quantity1 = document.getElementById ("Quantity1");
+                var quantity2 = document.getElementById ("Quantity2");
+                var quantity3 = document.getElementById ("Quantity3");
+            }
         </script>
     </head>
     <body>
@@ -78,7 +88,7 @@
                 Power Effeciency...have your phone stay up as long as you do<br>
             </p>
             Quantity: <input type="text" id="Quantity1">
-            <button onclick>
+            <button onclick="Quantity">
                 Add To Cart
             </button>
         </div>
@@ -138,7 +148,7 @@
             </button>
         </div>
         <br>
-        Subtotal: <input id="customersubtotal" type="text">
+        
         <button onclick="bill()">
             Continue To Check Out 
         </button>
